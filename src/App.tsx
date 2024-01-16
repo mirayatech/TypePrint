@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { parseHeadings } from "./utilities/parseHeadings";
+import { parseItalic } from "./utilities";
 import "./index.css";
 
 export default function App() {
@@ -14,6 +15,9 @@ export default function App() {
       if (heading) {
         return React.cloneElement(heading, { key: index });
       }
+
+      const parsedLine = parseItalic(line);
+      return <p key={index} dangerouslySetInnerHTML={{ __html: parsedLine }} />;
     });
   };
 
