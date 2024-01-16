@@ -10,8 +10,11 @@ export default function App() {
     const lines = markdownText.split("\n");
 
     return lines.map((line, index) => {
-      const heading = parseHeadings(line);
+      if (line.trim() === "") {
+        return <br key={index} />;
+      }
 
+      const heading = parseHeadings(line);
       if (heading) {
         return React.cloneElement(heading, { key: index });
       }
