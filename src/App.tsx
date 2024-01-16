@@ -1,8 +1,21 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import { parseHeadings } from "./utilities/parseHeadings";
 import "./index.css";
 
 export default function App() {
   const [markdownInput, setMarkdownInput] = useState("");
+
+  const parseMarkdown = (markdownText: string) => {
+    const lines = markdownText.split("\n");
+
+    return lines.map((line, index) => {
+      const heading = parseHeadings(line);
+
+      if (heading) {
+        return React.cloneElement(heading, { key: index });
+      }
+    });
+  };
 
   return (
     <>
@@ -18,7 +31,7 @@ export default function App() {
             placeholder="Write your markdown here..."
           />
         </div>
-        <div className="preview">Markdown Preview</div>
+        <div className="preview">{parseMarkdown(markdownInput)}</div>
       </main>
     </>
   );
