@@ -18,6 +18,8 @@ import "./preview.css";
 export default function App() {
   const [markdownInput, setMarkdownInput] = useState("");
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const previewRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const savedMarkdown = localStorage.getItem("markdownInput");
     if (savedMarkdown) {
@@ -27,6 +29,25 @@ export default function App() {
     if (textareaRef.current) {
       textareaRef.current.focus();
     }
+
+    const syncScroll = () => {
+      if (textareaRef.current && previewRef.current) {
+        const textareaScrollPercentage =
+          textareaRef.current.scrollTop / textareaRef.current.scrollHeight;
+        previewRef.current.scrollTop =
+          previewRef.current.scrollHeight * textareaScrollPercentage;
+      }
+    };
+
+    if (textareaRef.current) {
+      textareaRef.current.addEventListener("scroll", syncScroll);
+    }
+
+    return () => {
+      if (textareaRef.current) {
+        textareaRef.current.removeEventListener("scroll", syncScroll);
+      }
+    };
   }, []);
 
   useEffect(() => {
@@ -82,7 +103,9 @@ export default function App() {
             placeholder="Write your markdown here..."
           />
         </div>
-        <div className="preview">{parseMarkdown(markdownInput)}</div>
+        <div className="preview" ref={previewRef}>
+          {parseMarkdown(markdownInput)}
+        </div>
       </main>
     </>
   );
