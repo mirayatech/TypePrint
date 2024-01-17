@@ -1,16 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap");
+
 :root {
-  --blockquote-border: #dfe2e5;
-  --blockquote-background: #f6f8fa;
+  --red: #d84d4d;
+  --border: #dfe2e5;
+  --background: #f6f8fa;
   --blockquote-text: #333333;
 }
 
 .preview blockquote {
-  border-left: 4px solid var(--blockquote-border);
-  background-color: var(--blockquote-background);
+  border-left: 4px solid var(--border);
+  background-color: var(--background);
   padding: 10px 20px;
   margin: 10px 0;
   font-style: italic;
   color: var(--blockquote-text);
   word-wrap: break-word;
   overflow-wrap: break-word;
+}
+
+.preview code {
+  background-color: var(--background);
+  border-radius: 3px;
+  border: 1px solid var(--border);
+  font-family: "Courier Prime", monospace;
+  padding: 2px 6px;
+  font-size: 90%;
+  font-weight: 500;
+  color: var(--red);
 }
