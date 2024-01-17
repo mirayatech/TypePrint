@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   parseItalic,
   parseBold,
@@ -17,11 +17,15 @@ import "./preview.css";
 
 export default function App() {
   const [markdownInput, setMarkdownInput] = useState("");
-
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
   useEffect(() => {
     const savedMarkdown = localStorage.getItem("markdownInput");
     if (savedMarkdown) {
       setMarkdownInput(savedMarkdown);
+    }
+
+    if (textareaRef.current) {
+      textareaRef.current.focus();
     }
   }, []);
 
@@ -72,6 +76,7 @@ export default function App() {
       <main>
         <div className="editor">
           <textarea
+            ref={textareaRef}
             value={markdownInput}
             onChange={(event) => setMarkdownInput(event.target.value)}
             placeholder="Write your markdown here..."
