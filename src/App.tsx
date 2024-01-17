@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   parseItalic,
   parseBold,
@@ -17,6 +17,17 @@ import "./preview.css";
 
 export default function App() {
   const [markdownInput, setMarkdownInput] = useState("");
+
+  useEffect(() => {
+    const savedMarkdown = localStorage.getItem("markdownInput");
+    if (savedMarkdown) {
+      setMarkdownInput(savedMarkdown);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("markdownInput", markdownInput);
+  }, [markdownInput]);
 
   const parseMarkdown = (markdownText: string) => {
     const unorderedListProcessedText = parseUnorderedList(markdownText);
