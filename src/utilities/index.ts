@@ -7,3 +7,4 @@ export * from "./parseInlineCode";
 export * from "./parseHorizontalRule";
 export * from "./parseHighlight";
 export * from "./parseLinks";
+export * from "./parseImage";
