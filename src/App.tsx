@@ -54,8 +54,8 @@ export default function App() {
   return (
     <>
       <header>
-        <h1>OtakuMD</h1>
-        <h2>A Markdown Editor and Preview </h2>
+        <h1>TypePrint</h1>
+        <h2>Your Markdown Editor and Preview Tool</h2>
       </header>
       <main>
         <div className="editor">
