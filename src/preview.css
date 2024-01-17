@@ -35,3 +35,8 @@
   background: var(--border);
   margin: 20px 0;
 }
+
+.preview .highlight {
+  background-color: #ffff99;
+  padding: 0 4px;
+}
