@@ -6,3 +6,4 @@ export * from "./parseBlockquote";
 export * from "./parseInlineCode";
 export * from "./parseHorizontalRule";
 export * from "./parseHighlight";
+export * from "./parseLinks";

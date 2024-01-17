@@ -8,6 +8,7 @@ import {
   parseInlineCode,
   parseHorizontalRule,
   parseHighlight,
+  parseLinks,
 } from "./utilities";
 import "./index.css";
 import "./preview.css";
@@ -44,6 +45,8 @@ export default function App() {
       parsedLine = parseStrikethrough(parsedLine);
       parsedLine = parseInlineCode(parsedLine);
       parsedLine = parseHighlight(parsedLine);
+      parsedLine = parseLinks(line);
+
       return <p key={index} dangerouslySetInnerHTML={{ __html: parsedLine }} />;
     });
   };
