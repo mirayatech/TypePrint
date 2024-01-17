@@ -6,6 +6,7 @@ import {
   parseStrikethrough,
   parseBlockquote,
   parseInlineCode,
+  parseHorizontalRule,
 } from "./utilities";
 import "./index.css";
 import "./preview.css";
@@ -20,14 +21,21 @@ export default function App() {
         return <br key={index} />;
       }
 
-      const element = parseBlockquote(line);
+      let element;
+
+      element = parseHorizontalRule(line);
       if (element) {
         return React.cloneElement(element, { key: index });
       }
 
-      const heading = parseHeadings(line);
-      if (heading) {
-        return React.cloneElement(heading, { key: index });
+      element = parseBlockquote(line);
+      if (element) {
+        return React.cloneElement(element, { key: index });
+      }
+
+      element = parseHeadings(line);
+      if (element) {
+        return React.cloneElement(element, { key: index });
       }
 
       let parsedLine = parseBold(line);

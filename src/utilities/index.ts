@@ -4,3 +4,4 @@ export * from "./parseBold";
 export * from "./parseStrikethrough";
 export * from "./parseBlockquote";
 export * from "./parseInlineCode";
+export * from "./parseHorizontalRule";
