@@ -8,3 +8,4 @@ export * from "./parseHorizontalRule";
 export * from "./parseHighlight";
 export * from "./parseLinks";
 export * from "./parseImage";
+export * from "./parseUnorderedList";

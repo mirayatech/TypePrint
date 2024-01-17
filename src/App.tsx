@@ -10,33 +10,32 @@ import {
   parseHighlight,
   parseLinks,
   parseImages,
+  parseUnorderedList,
 } from "./utilities";
 import "./index.css";
 import "./preview.css";
+
 export default function App() {
   const [markdownInput, setMarkdownInput] = useState("");
 
   const parseMarkdown = (markdownText: string) => {
-    const lines = markdownText.split("\n");
+    const unorderedListProcessedText = parseUnorderedList(markdownText);
+    const lines = unorderedListProcessedText.split("\n");
 
     return lines.map((line, index) => {
-      if (line.trim() === "") {
-        return <br key={index} />;
+      if (
+        line.startsWith("<li>") ||
+        line.startsWith("</ul>") ||
+        line.startsWith("<ul>")
+      ) {
+        return <div key={index} dangerouslySetInnerHTML={{ __html: line }} />;
       }
 
-      let element;
+      const element =
+        parseHorizontalRule(line) ||
+        parseBlockquote(line) ||
+        parseHeadings(line);
 
-      element = parseHorizontalRule(line);
-      if (element) {
-        return React.cloneElement(element, { key: index });
-      }
-
-      element = parseBlockquote(line);
-      if (element) {
-        return React.cloneElement(element, { key: index });
-      }
-
-      element = parseHeadings(line);
       if (element) {
         return React.cloneElement(element, { key: index });
       }
@@ -52,6 +51,7 @@ export default function App() {
       return <p key={index} dangerouslySetInnerHTML={{ __html: parsedLine }} />;
     });
   };
+
   return (
     <>
       <header>
