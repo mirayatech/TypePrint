@@ -9,7 +9,7 @@ TypePrint is a modern Markdown editor built, designed to provide real-time previ
 - User-Friendly Interface
 - Saves in Local Storage, so you don't lose your work.
 - Extended Markdown Support:
-  - Headings (H1 - H3)
+  - Headings (H1 - H6)
   - Bold and Italic Text
   - Strikethrough
   - Blockquotes
