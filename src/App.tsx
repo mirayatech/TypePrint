@@ -46,8 +46,9 @@ export default function App() {
       parsedLine = parseStrikethrough(parsedLine);
       parsedLine = parseInlineCode(parsedLine);
       parsedLine = parseHighlight(parsedLine);
-      parsedLine = parseLinks(line);
-      parsedLine = parseImages(line);
+      parsedLine = parseImages(parsedLine);
+      parsedLine = parseLinks(parsedLine);
+
       return <p key={index} dangerouslySetInnerHTML={{ __html: parsedLine }} />;
     });
   };
