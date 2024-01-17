@@ -67,7 +67,7 @@ export default function App() {
     <>
       <header>
         <h1>TypePrint</h1>
-        <h2>Your Markdown Editor and Preview Tool</h2>
+        <h2>Markdown Editor and Preview Tool</h2>
       </header>
       <main>
         <div className="editor">
