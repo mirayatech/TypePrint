@@ -4,9 +4,10 @@ import {
   parseBold,
   parseHeadings,
   parseStrikethrough,
+  parseBlockquote,
 } from "./utilities";
 import "./index.css";
-
+import "./preview.css";
 export default function App() {
   const [markdownInput, setMarkdownInput] = useState("");
 
@@ -16,6 +17,11 @@ export default function App() {
     return lines.map((line, index) => {
       if (line.trim() === "") {
         return <br key={index} />;
+      }
+
+      const element = parseBlockquote(line);
+      if (element) {
+        return React.cloneElement(element, { key: index });
       }
 
       const heading = parseHeadings(line);
