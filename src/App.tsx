@@ -7,6 +7,7 @@ import {
   parseBlockquote,
   parseInlineCode,
   parseHorizontalRule,
+  parseHighlight,
 } from "./utilities";
 import "./index.css";
 import "./preview.css";
@@ -42,7 +43,7 @@ export default function App() {
       parsedLine = parseItalic(parsedLine);
       parsedLine = parseStrikethrough(parsedLine);
       parsedLine = parseInlineCode(parsedLine);
-
+      parsedLine = parseHighlight(parsedLine);
       return <p key={index} dangerouslySetInnerHTML={{ __html: parsedLine }} />;
     });
   };
