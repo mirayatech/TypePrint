@@ -1,0 +1,16 @@
+:root {
+  --blockquote-border: #dfe2e5;
+  --blockquote-background: #f6f8fa;
+  --blockquote-text: #333333;
+}
+
+.preview blockquote {
+  border-left: 4px solid var(--blockquote-border);
+  background-color: var(--blockquote-background);
+  padding: 10px 20px;
+  margin: 10px 0;
+  font-style: italic;
+  color: var(--blockquote-text);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
