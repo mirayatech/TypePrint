@@ -5,6 +5,9 @@
   --border: #d9dce0;
   --background: #f6f8fa;
   --dark-gray: #333333;
+  --link-color: #007bff;
+  --link-hover-color: #0056b3;
+  --link-active-color: #004085;
 }
 
 .preview blockquote {
@@ -39,4 +42,20 @@
 .preview .highlight {
   background-color: #ffff99;
   padding: 0 4px;
+}
+
+.preview a {
+  color: var(--link-color);
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.preview a:hover,
+.preview a:focus {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+.preview a:active {
+  color: var(--link-active-color);
 }
