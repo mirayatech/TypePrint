@@ -5,6 +5,7 @@ import {
   parseHeadings,
   parseStrikethrough,
   parseBlockquote,
+  parseInlineCode,
 } from "./utilities";
 import "./index.css";
 import "./preview.css";
@@ -32,6 +33,7 @@ export default function App() {
       let parsedLine = parseBold(line);
       parsedLine = parseItalic(parsedLine);
       parsedLine = parseStrikethrough(parsedLine);
+      parsedLine = parseInlineCode(parsedLine);
 
       return <p key={index} dangerouslySetInnerHTML={{ __html: parsedLine }} />;
     });
