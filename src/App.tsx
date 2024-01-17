@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { parseItalic, parseBold, parseHeadings } from "./utilities";
+import {
+  parseItalic,
+  parseBold,
+  parseHeadings,
+  parseStrikethrough,
+} from "./utilities";
 import "./index.css";
 
 export default function App() {
@@ -20,6 +25,7 @@ export default function App() {
 
       let parsedLine = parseBold(line);
       parsedLine = parseItalic(parsedLine);
+      parsedLine = parseStrikethrough(parsedLine);
 
       return <p key={index} dangerouslySetInnerHTML={{ __html: parsedLine }} />;
     });
