@@ -2,9 +2,9 @@
 
 :root {
   --red: #d84d4d;
-  --border: #dfe2e5;
+  --border: #d9dce0;
   --background: #f6f8fa;
-  --blockquote-text: #333333;
+  --dark-gray: #333333;
 }
 
 .preview blockquote {
@@ -13,7 +13,7 @@
   padding: 10px 20px;
   margin: 10px 0;
   font-style: italic;
-  color: var(--blockquote-text);
+  color: var(--dark-gray);
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
@@ -27,4 +27,11 @@
   font-size: 90%;
   font-weight: 500;
   color: var(--red);
+}
+
+.preview hr {
+  border: 0;
+  height: 1px;
+  background: var(--border);
+  margin: 20px 0;
 }
