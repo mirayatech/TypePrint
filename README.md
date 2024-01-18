@@ -68,6 +68,14 @@ Finally, I added some tests to make sure everything worked correctly. The whole 
 
 ## 📚 What I Learned
 
+I got a chance to use while loops and other types of loops a lot. It had been a while since I last used them this much, so it was good practice.
+
+In this project, I worked with `dangerouslySetInnerHTML`, which is used for adding HTML directly to a web page. I learned that it needs to be used very carefully because bad scripts could get into the site.
+
+So, I handled it in a way where I created special functions to convert Markdown to HTML. These functions identify the correct parts of Markdown and safely turn them into HTML.
+
+By doing this, I made sure that no dangerous code, like a script that might try to steal information I don't have or cause problems on the site, got through.
+
 ## 💡 Future Improvements
 
 - Adding the ability to write:
