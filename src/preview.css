@@ -10,6 +10,11 @@
   --link-active-color: #004085;
 }
 
+.preview div,
+.preview p {
+  margin: 10px 0;
+}
+
 .preview h1 {
   font-size: 2em;
   margin: 0.67em 0;
