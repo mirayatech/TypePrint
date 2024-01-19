@@ -64,7 +64,7 @@ As a result, I ended up trying to figure it out myself. I used a while loop and 
 
 After that, I made similar functions for italics and other features. The bold text function was the trickiest part, but once that was done, it was easier to make the other functions.
 
-Finally, I added some tests to make sure everything worked correctly. The whole process was about building things step by step, starting with the basics and adding more features as I went.
+The whole process was about building things step by step, starting with the basics and adding more features as I went.
 
 ## 📚 What I Learned
 
