@@ -25,33 +25,6 @@ TypePrint is a modern Markdown editor built, designed to provide real-time previ
 - `React`
 - `TypeScript`
 
-## 📝 TypePrint - Your Markdown Editor and Preview Tool
-
-TypePrint is a modern Markdown editor built, designed to provide real-time preview of Markdown content. It is good for writing, previewing, and fine-tuning your Markdown files.
-
-## 🚀 Features
-
-- Real-Time Preview
-- Synchronized Scrolling
-- User-Friendly Interface
-- Saves in Local Storage, so you don't lose your work.
-- Extended Markdown Support:
-  - Headings (H1 - H6)
-  - Bold and Italic Text
-  - Strikethrough
-  - Blockquotes
-  - Inline Code
-  - Horizontal Rules
-  - Highlighted Text
-  - Links and Images
-  - Unordered (Bullet) Lists
-
-## 📦 Technologies
-
-- `CSS`
-- `React`
-- `TypeScript`
-
 ## 🍊 Process
 
 I started by making the UI, focusing on getting the text from the textarea to show up in the preview area right away.
